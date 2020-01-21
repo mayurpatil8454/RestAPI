@@ -38,14 +38,14 @@ EditXml = (xml) => {
    console.log(xmlDoc);
    var value = xmlDoc.indexOf("<country>")
    var value1 = xmlDoc.indexOf("</country>")
-   value = value + 6;
+   value = value + 9;
    txt = xmlDoc.slice(value,value1);
    //console.log(txt);
     return txt;
 
 }
 app.get('/', function (req, res) {  
-  res.send('Welcome to REST service');  
+  res.send("Welcome to mayur's REST service");  
 });
 
 var server = app.listen(process.env.PORT || 8081, function () {

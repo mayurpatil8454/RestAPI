@@ -1,14 +1,14 @@
 <html>
     <body>
-        <input name="lat" id="lat" type="number"/>
-        <input name="lon" id="lon" type="number"/>
-        <input name="submit" placeholder="Send" id="lat" onclick="fun();" type="button"/>
+        <input name="lat" id="lat" type="number" placeholder="lat"/>
+        <input name="lon" id="lon" type="number" placeholder="lon"/>
+        <input name="submit" value="Send" id="lat" onclick="fun();" type="button"/>
         <div>The location is in <span id="country"></span></div>
     </body>
     <script>
         fun =() =>{
-         const url = "http://127.0.0.1:8081/GetLocationDetails";
-
+        //const url = "http://127.0.0.1:8081/GetLocationDetails";
+        const url ="https://mayurrestapi.herokuapp.com/GetLocationDetails";
 
     const other_params = {
         headers : { "content-type" : "application/json; charset=UTF-8" , 'Accept': 'application/json' },
