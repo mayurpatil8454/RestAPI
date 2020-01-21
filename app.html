@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <input name="lat" id="lat" type="number"/>
+        <input name="lon" id="lon" type="number"/>
+        <input name="submit" placeholder="Send" id="lat" onclick="fun();" type="button"/>
+        <div>The location is in <span id="country"></span></div>
+    </body>
+    <script>
+        fun =() =>{
+         const url = "http://127.0.0.1:8081/GetLocationDetails";
+
+
+    const other_params = {
+        headers : { "content-type" : "application/json; charset=UTF-8" , 'Accept': 'application/json' },
+        body :  JSON.stringify(data = {
+        'lat' :  document.getElementById('lat').value,
+        'lon' : document.getElementById('lon').value
+        }),
+        method : "POST",
+        mode : "cors"
+    };
+
+    fetch(url, other_params)
+        // .then(function(response) {
+        //     if (response.ok) {
+        //         return console.log(response.body);
+        //     } else {
+        //         throw new Error("Could not reach the API: " + response.statusText);
+        //     }});
+        .then((resp) => resp.json()) // Transform the data into json
+            .then(function(data) {
+                // Create and append the li's to the ul
+                document.getElementById('country').innerText = data.response; 
+                console.log(data)
+            })
+    }
+    </script>
+</html>
